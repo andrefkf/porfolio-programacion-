@@ -26,6 +26,7 @@ body {
 .profile {
     display: flex;
     align-items: center;
+    margin: 0 auto;
 }
 
 .profile-photo {
@@ -33,7 +34,7 @@ body {
     height: 600px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 30px;
+    margin-right: 50px;
     border: 6px solid #fff;
 }
 
@@ -52,7 +53,11 @@ body {
 
 .profile-photo:hover {
     transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 1), 
+                0 0 50px rgba(255, 255, 255, 0.9), 
+                0 0 75px rgba(255, 255, 255, 0.8), 
+                0 0 100px rgba(255, 255, 255, 0.7);
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 .profile-photo:hover::after {
@@ -61,6 +66,7 @@ body {
 
 .info {
     text-align: left;
+    margin-left: 50px;
 }
 
 @keyframes fadeInUp {
@@ -97,7 +103,7 @@ body {
 .info .area {
     letter-spacing: 1px;
     margin: 5px 0 0;
-    font-size: 2.5em;
+    font-size: 2em;
     font-family: "Graduate", serif;
     font-weight: 500;
     font-style: normal;
@@ -105,11 +111,20 @@ body {
     animation: fadeInDelay 1s ease-out 0.5s forwards; 
 }
 
+.info .nom:hover, 
+.info .area:hover {
+    text-shadow: 0 0 10px rgba(200, 200, 200, 0.8), 
+                 0 0 20px rgba(200, 200, 200, 0.6), 
+                 0 0 30px rgba(200, 200, 200, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
 #acerca {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Cambiado para que los elementos estén en columna */
     align-items: flex-start;
-    height: 100vh; 
+    justify-content: flex-start;
+    height: auto; /* Cambiado a auto para que el contenedor ajuste su altura */
     padding: 20px;
     box-sizing: border-box;
     position: relative;
@@ -117,10 +132,9 @@ body {
 }
 
 .left-content {
-    width: 45%;
-    margin: 30px;
-    margin-top: 10px;
+    width: 84%; /* Ancho completo para el contenido de la izquierda */
     text-align: left;
+    margin-bottom: 30px; /* Se añadió un margen inferior para separar el texto de los cuadrados */
 }
 
 .titulo {
@@ -134,126 +148,161 @@ body {
     margin-bottom: 20px;
 }
 
+.titulo:hover {
+    text-shadow: 0 0 20px rgba(200, 200, 200, 0.8), 
+                 0 0 30px rgba(200, 200, 200, 0.6), 
+                 0 0 40px rgba(200, 200, 200, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
 .text {
     letter-spacing: 1px;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family: "Graduate", serif;
     font-weight: 400;
     font-style: normal;
     color: #555;
+    margin-bottom: 30px; /* Separar más del siguiente bloque */
+    line-height: 1.2; /* Aumenta el espacio entre las líneas para más largo */
 }
+
+.text:hover {
+    text-shadow: 0 0 20px rgba(200, 200, 200, 0.8), 
+                 0 0 30px rgba(200, 200, 200, 0.6), 
+                 0 0 40px rgba(200, 200, 200, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
 
 .cuadrados {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 100vh; 
-    width: 198vh;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-direction: column; /* Acomoda los cuadrados en columna */
+    align-items: center; /* Centra los cuadrados */
+    gap: 30px; /* Espacio entre los cuadros */
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
 }
 
+/* Ajuste en los cuadrados */
 .cuadrado {
-    width: 30%;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px;
     padding: 20px;
-    box-sizing: border-box;
-}
-
-ul {
-    list-style-type: disc; 
-    padding-left: 20px;
+    text-align: left;
+    position: relative;
 }
 
 #cuadrado1 {
-    position: absolute;
-    top: 0;
-    right: 0;
+    background: rgba(255, 255, 255, 0.5);
     width: 35%;
-    border-radius: 30px 0 0 30px;
+    border-radius: 45px 45px 10px 45px;
+    margin-left: -35%;
 }
 
-.subtitulo1 {
-    letter-spacing: 1px;
-    font-size: 3em;
-    font-family: "Graduate", serif;
-    font-weight: 900;
-    font-style: normal;
-    color: #000;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-ul .list {
-    letter-spacing: 2px;
-    font-size: 1.2em;
-    font-family: "Graduate", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #555;
+#cuadrado1:hover {
+    left: -55px;
+    transform: scale(1.1) translateY(-10px); /* Se agranda y se levanta */
+    box-shadow: 0 0 45px rgba(255, 255, 255, 0.9), 
+                0 0 30px rgba(255, 255, 255, 0.8),
+                0 0 30px rgba(255, 255, 255, 0.7);
 }
 
 #cuadrado2 {
-    background-color: #555;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-radius: 30px 0 0 0;
+    background: rgba(255, 255, 255, 0.5);
+    width: 39%;
+    border-radius: 10px 45px 45px 45px;
+    margin-left: 35%;
 }
 
-.subtitulo2 {
+#cuadrado2:hover {
+    left: 55px;
+    transform: scale(1.1) translateY(-10px); /* Se agranda y se levanta */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 
+                0 0 30px rgba(255, 255, 255, 0.8),
+                0 0 45px rgba(255, 255, 255, 0.7);
+}
+
+/* Estilos para los subtítulos */
+.subtitulo1, .subtitulo2 {
     letter-spacing: 1px;
-    font-size: 3em;
+    font-size: 2.2em;
     font-family: "Graduate", serif;
     font-weight: 900;
     font-style: normal;
-    color: #fff;
+    color: #f1f1f1; /* Todos los subtítulos en negro */
     margin-top: 10px;
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center;
 }
 
-ul .list2 {
-    letter-spacing: 2px;
-    font-size: 1.2em;
-    font-family: "Graduate", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #000;
+.subtitulo1:hover, 
+.subtitulo2:hover {
+   text-shadow: 0 0 45px rgba(0, 0, 0, 0.8), 
+                0 0 30px rgba(0, 0, 0, 0.6), 
+                0 0 30px rgba(0, 0, 0, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
 }
 
-#cuadrado3 {
+hr {
+  width: 250px; 
+  height: 3px; 
+  background-color: #f5f5f5;
+  border: none; 
+  border-radius: 20px;
+  margin: 20px auto; 
+}
+
+.iconos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.iconos2 {
+    display: flex;
+    align-items: left;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+
+.icono {
+    width: 65px; /* Ajusta el tamaño según necesites */
+    height: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.2)); /* Efecto de sombra */
+}
+
+.icono-container {
+    position: relative;
+    display: inline-block;
+}
+
+.icono-container:hover .icono {
+    transform: scale(1.1);
+}
+
+.icono-container::after {
+    content: attr(data-nivel);
     position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: #372D2F;
-    width: 44%;
-    border-radius: 30px 30px 0 0;
-}
-
-.subtitulo3 {
-    letter-spacing: 1px;
-    font-size: 3em;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 15px;
     font-family: "Graduate", serif;
     font-weight: 900;
     font-style: normal;
-    color: #000;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    text-align: left;
+    color: #f1f1f1; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
-ul .list3 {
-    letter-spacing: 2px;
-    font-size: 1.2em;
-    font-family: "Graduate", serif;
-    font-weight: 600;
-    font-style: normal;
-    color: #fff;
+.icono-container:hover::after {
+    opacity: 1;
 }
 
 /* Animación de entrada */
@@ -329,6 +378,13 @@ ul .list3 {
     margin-bottom: 20px;
 }
 
+.titule:hover {
+    text-shadow: 0 0 20px rgba(200, 200, 200, 0.8), 
+                 0 0 30px rgba(200, 200, 200, 0.6), 
+                 0 0 40px rgba(200, 200, 200, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
 .proy {
     font-size: 1em;
     font-family: "Graduate", serif;
@@ -344,23 +400,18 @@ ul .list3 {
     margin-bottom: 15px;
 }
 
+.tite:hover {
+    text-shadow: 0 0 20px rgba(59, 140, 109, 0.8),
+                 0 0 30px rgba(59, 140, 109, 0.6),
+                 0 0 40px rgba(59, 140, 109, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
 .descri {
     font-size: 1.2em;
     font-family: "Graduate", serif;
     color: #30473A;
     margin-bottom: 20px;
-}
-
-ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-.lit {
-    font-size: 1.2em;
-    font-family: "Graduate", serif;
-    color: #749A8C;
-    margin-bottom: 5px;
 }
 
 .proy2 {
@@ -378,6 +429,13 @@ ul {
     margin-bottom: 15px;
 }
 
+.tite2:hover {
+     text-shadow: 0 0 20px rgba(59, 140, 109, 0.8),
+                  0 0 30px rgba(59, 140, 109, 0.6),
+                  0 0 40px rgba(59, 140, 109, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
 .descri2 {
     font-size: 1.2em;
     font-family: "Graduate", serif;
@@ -385,100 +443,41 @@ ul {
     margin-bottom: 20px;
 }
 
-.lit2 {
-    font-size: 1.2em;
-    font-family: "Graduate", serif;
-    color: #4575E1;
-    margin-bottom: 5px;
-}
-
-.image-carousel, .image-carousel2 {
+.cart {
     position: relative;
-    width: 40%;
-    height: 90%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 650px;
+    padding: 30px 25px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 45px;
     overflow: hidden;
-    border-radius: 15px;
+    top: 85px;
+    transition: transform 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-.carousel-images, .carousel-images2 {
+.carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto; /* HABILITA SCROLL */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    -ms-overflow-style: none; /* Oculta scrollbar en Edge */
 }
 
-.portfolio-img {
+.carousel::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar en Chrome y Safari */
+}
+
+.carousel img {
     width: 100%;
-    height: 90%;
-    border-radius: 15px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.portfolio-img:hover {
-    opacity: 0.7;
-    background-color: rgba(116, 154, 140, 0.7); /* Efecto de semitransparencia */
-}
-
-.portfolio-img2 {
-    width: 100%;
-    height: 90%;
-    border-radius: 15px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.portfolio-img2:hover {
-    opacity: 0.7;
-    background-color: rgba(116, 154, 140, 0.7); /* Efecto de semitransparencia */
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #FFF;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 2em;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.carousel-btn2 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #FFF;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 2em;
-    border-radius: 50%;
-    z-index: 10;
-}
-
-
-.prev-btn {
-    left: 10px;
-}
-
-.prev-btn2 {
-    left: 50px;
-}
-
-.next-btn {
-    right: 10px;
-}
-
-.next.btn2 {
-    right: 10px;
-}
-
-.carousel-btn:hover .carousel-btn2:hover {
-    background-color: #749A8C;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Animaciones */
@@ -546,9 +545,16 @@ ul {
     margin-bottom: 20px;
 }
 
+.titular:hover {
+    text-shadow: 0 0 20px rgba(200, 200, 200, 0.8), 
+                 0 0 30px rgba(200, 200, 200, 0.6), 
+                 0 0 40px rgba(200, 200, 200, 0.4);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
 .text2 {
     letter-spacing: 1px;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family: "Graduate", serif;
     font-weight: 400;
     font-style: normal;
@@ -566,10 +572,14 @@ ul {
   max-width: 400px;
   aspect-ratio: 4/2;
   object-fit: contain;
+  transition: all 0.3s ease-in-out;
 }
 
 .icon:hover {
     margin-top: -20px;
     width: 650px;
     opacity: 0.55;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))
+            drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
 }

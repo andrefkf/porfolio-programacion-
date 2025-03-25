@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const elementos = document.querySelectorAll(
-        '#porfolio .titule, #porfolio .proy, #porfolio .tite, #porfolio .descri, #porfolio .lit, #porfolio .portfolio-img, #porfolio .carousel-btn'
+        '#porfolio .titule, #porfolio .proy, #porfolio .tite, #porfolio .descri, #porfolio .iconos2, #porfolio .cart'
     );
 
     const observer = new IntersectionObserver((entries) => {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const elementos = document.querySelectorAll(
-        '#porfolio2 .titule, #porfolio2 .proy2, #porfolio2 .tite2, #porfolio2 .descri2, #porfolio2 .lit2, #porfolio2 .portfolio-img2, #porfolio2 .carousel-btn2'
+        '#porfolio2 .titule, #porfolio2 .proy2, #porfolio2 .tite2, #porfolio2 .descri2, #porfolio2 .iconos2, #porfolio2 .cart'
     );
 
     const observer = new IntersectionObserver((entries) => {
